@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LampLichtknop", "LampLichtknop.csproj", "{CA8408C6-1704-4750-9FB3-FF220908B226}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA8408C6-1704-4750-9FB3-FF220908B226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA8408C6-1704-4750-9FB3-FF220908B226}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA8408C6-1704-4750-9FB3-FF220908B226}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA8408C6-1704-4750-9FB3-FF220908B226}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {32158326-2ADF-4BE7-A756-4EAF228468C7}
+	EndGlobalSection
+EndGlobal
