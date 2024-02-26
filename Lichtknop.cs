@@ -6,30 +6,60 @@ using System.Threading.Tasks;
 
 namespace LampLichtknop
 {
+    /// <summary>
+    /// Representeert de lichtknop
+    /// </summary>
     public class Lichtknop
     {
-        int id;
-        public bool aanUit;
-        Lamp lamp;
+        private int id;
+        
+        /// <summary>
+        /// Geeft aan of de schakelaar aan of uit staat
+        /// </summary>
+        public bool AanUit { get; private set; }
 
+        /// <summary>
+        /// De lijst met lampen, property met getter en setter
+        /// </summary>
+        public List<Lamp> Lampen { get; set; }
+
+        /// <summary>
+        /// Standaard constructor
+        /// </summary>
         public Lichtknop()
         {
-            aanUit = false;
-            lamp = new Lamp();
+            AanUit = false;
+            Lampen = new List<Lamp>();
+        }
+        /// <summary>
+        /// Voeg een lamp toe aan de lichtknop
+        /// </summary>
+        /// <param name="lamp">De lamp die je wilt toevoegen</param>
+        public void LampToevoegen(Lamp lamp)
+        {
+            Lampen.Add(lamp);
         }
 
+        /// <summary>
+        /// Zet de schakelaar om. Als alles aan stond staat erna alles uit, en andersom.
+        /// </summary>
         public void Omzetten()
         {
-            aanUit = !aanUit;
-            if (aanUit)
+            AanUit = !AanUit;
+            if (AanUit)
             {
-                lamp.AanGaan();
+                foreach (var lamp in Lampen)
+                {
+                    lamp.AanGaan();
+                }
             }
             else
             {
-                lamp.UitGaan();
+                foreach (var lamp in Lampen)
+                {
+                    lamp.UitGaan();
+                }
             }
-
         }
     }
 }
