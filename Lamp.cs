@@ -40,7 +40,7 @@ namespace LampLichtknop
         /// </summary>
         public void AanGaan()
         {
-            aanUit = true;
+            AanUit = true;
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace LampLichtknop
         /// </summary>
         public void UitGaan()
         {
-            aanUit = false;
+            AanUit = false;
         }
 
     }

@@ -21,7 +21,7 @@
             Console.WriteLine($"De lichtknop staat: {lichtknop.AanUit}");
             foreach (var lamp in lichtknop.Lampen)
             {
-                Console.WriteLine($"Lamp staat aan = {lamp.aanUit}");
+                Console.WriteLine($"Lamp staat aan = {lamp.AanUit}");
             }
 
 
