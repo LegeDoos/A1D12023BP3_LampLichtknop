@@ -13,7 +13,10 @@
 
             for (int i = 0; i < 100; i++)
             {
-                lichtknop.LampToevoegen(new Lamp(lichtknop));
+                // maak een instantie van een lamp aan
+                Lamp lampToevoegen = new Lamp(lichtknop);
+                // voeg toe aan de lijst van lampen van de lichtknop
+                lichtknop.LampToevoegen(lampToevoegen);
             }
 
             lichtknop.Omzetten();

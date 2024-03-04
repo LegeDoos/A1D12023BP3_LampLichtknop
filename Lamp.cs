@@ -31,9 +31,18 @@ namespace LampLichtknop
         public Lamp(Lichtknop lichtknop)
         {
             AanUit = false;
-            _beschrijving = "Nieuwe lamp";
+            _beschrijving = "De lamp";
             Lichtknop = lichtknop;
         }
+
+        // DIT IS OVERLOADING!
+        public Lamp(Lichtknop lichtknop, string beschrijving)
+        {
+            AanUit = true;
+            _beschrijving = beschrijving;
+            Lichtknop = lichtknop;
+        }
+
 
         /// <summary>
         /// Deze method zet de lamp aan
