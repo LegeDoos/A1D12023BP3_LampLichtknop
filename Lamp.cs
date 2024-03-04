@@ -10,7 +10,13 @@ namespace LampLichtknop
     {
         public int Id { get; set; }
         public bool AanUit { get; private set; }
-        
+
+        private int _percentage;
+        public int Percentage {
+            get { return AanUit ? _percentage : 0; }
+            set { _percentage = value; } 
+        }
+
         private string _beschrijving;
         public string Beschrijving {
             get { 
@@ -33,6 +39,7 @@ namespace LampLichtknop
             AanUit = false;
             _beschrijving = "De lamp";
             Lichtknop = lichtknop;
+            Percentage = 100;
         }
 
         // DIT IS OVERLOADING!

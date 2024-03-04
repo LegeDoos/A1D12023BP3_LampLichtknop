@@ -11,7 +11,7 @@
             lichtknop.LampToevoegen(lamp1);
             lichtknop.LampToevoegen(lamp2);
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 10; i++)
             {
                 // maak een instantie van een lamp aan
                 Lamp lampToevoegen = new Lamp(lichtknop);
@@ -24,7 +24,15 @@
             Console.WriteLine($"De lichtknop staat: {lichtknop.AanUit}");
             foreach (var lamp in lichtknop.Lampen)
             {
-                Console.WriteLine($"Lamp staat aan = {lamp.AanUit}");
+                Console.WriteLine($"Lamp staat aan = {lamp.AanUit} en brandt met {lamp.Percentage}%");
+            }
+
+            lichtknop.Omzetten();
+
+            Console.WriteLine($"De lichtknop staat: {lichtknop.AanUit}");
+            foreach (var lamp in lichtknop.Lampen)
+            {
+                Console.WriteLine($"Lamp staat aan = {lamp.AanUit} en brandt met {lamp.Percentage}%");
             }
 
 
