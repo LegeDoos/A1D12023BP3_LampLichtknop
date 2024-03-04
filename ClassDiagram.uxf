@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>16</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>848</x>
+      <y>80</y>
+      <w>336</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>Lamp
+-
+- id : int
++ AanUit : bool
++ Percentage : int
++ Beschrijving : string
++ LichtKnop : Lichtknop
+-
++ AanGaan()
++ Uitgaan()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>144</x>
+      <y>80</y>
+      <w>352</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>Lichtknop
+-
++ AanUit : bool
++ Lampen : List&lt;Lamp&gt;
+-
++ LampToevoegen(Lamp)
++ Omzetten()
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>144</y>
+      <w>400</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*
+bedienen &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;230.0;20.0</additional_attributes>
+  </element>
+</diagram>
