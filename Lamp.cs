@@ -13,7 +13,17 @@ namespace LampLichtknop
 
         private int _percentage;
         public int Percentage {
-            get { return AanUit ? _percentage : 0; }
+            get
+            {
+                if (AanUit)
+                {
+                    return _percentage;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
             set { _percentage = value; } 
         }
 

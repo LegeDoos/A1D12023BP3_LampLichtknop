@@ -11,7 +11,7 @@
             lichtknop.LampToevoegen(lamp1);
             lichtknop.LampToevoegen(lamp2);
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
                 // maak een instantie van een lamp aan
                 Lamp lampToevoegen = new Lamp(lichtknop);
@@ -35,6 +35,25 @@
                 Console.WriteLine($"Lamp staat aan = {lamp.AanUit} en brandt met {lamp.Percentage}%");
             }
 
+            DimSchakelaar dimSchakelaar = new DimSchakelaar();
+            Lamp specialeLamp = new Lamp(dimSchakelaar);
+            dimSchakelaar.LampToevoegen(specialeLamp);
+            
+            Console.WriteLine("Initiele status");
+            Console.WriteLine($"de speciale lamp staat aan = {specialeLamp.AanUit} en brandt met {specialeLamp.Percentage}%");
+
+            
+            dimSchakelaar.Omzetten();
+            Console.WriteLine("Aanzetten:");
+            Console.WriteLine($"de speciale lamp staat aan = {specialeLamp.AanUit} en brandt met {specialeLamp.Percentage}%");
+
+            dimSchakelaar.DimFactorInstellen(50);
+            Console.WriteLine("Dimmen");
+            Console.WriteLine($"de speciale lamp staat aan = {specialeLamp.AanUit} en brandt met {specialeLamp.Percentage}%");
+
+            dimSchakelaar.Omzetten();
+            Console.WriteLine("uitzetten:");
+            Console.WriteLine($"de speciale lamp staat aan = {specialeLamp.AanUit} en brandt met {specialeLamp.Percentage}%");
 
         }
     }
