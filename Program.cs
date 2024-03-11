@@ -4,8 +4,11 @@
     {
         static void Main(string[] args)
         {
+            List<Lichtknop> lichtknoppen = new List<Lichtknop>();
+
             Lichtknop lichtknop = new Lichtknop();
-            
+            lichtknoppen.Add(lichtknop);
+
             Lamp lamp1 = new Lamp(lichtknop);
             Lamp lamp2 = new Lamp(lichtknop);
             lichtknop.LampToevoegen(lamp1);
@@ -36,6 +39,7 @@
             }
 
             DimSchakelaar dimSchakelaar = new DimSchakelaar();
+            lichtknoppen.Add(dimSchakelaar);
             Lamp specialeLamp = new Lamp(dimSchakelaar);
             dimSchakelaar.LampToevoegen(specialeLamp);
             
@@ -54,6 +58,16 @@
             dimSchakelaar.Omzetten();
             Console.WriteLine("uitzetten:");
             Console.WriteLine($"de speciale lamp staat aan = {specialeLamp.AanUit} en brandt met {specialeLamp.Percentage}%");
+
+            // toon lichtknoppen
+            Console.WriteLine("\n\nLichtknoppen:");
+            int j = 1;
+            foreach (Lichtknop knop in lichtknoppen)
+            {
+                Console.WriteLine($"Lichtknop {j} staat aan: {knop.AanUit} en heeft {knop.Lampen.Count} lampen en heeft als type {knop.GetType()}");
+                j++;    
+            }
+
 
         }
     }
