@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>16</zoom_level>
+  <zoom_level>15</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>848</x>
-      <y>80</y>
-      <w>336</w>
-      <h>304</h>
+      <x>795</x>
+      <y>15</y>
+      <w>315</w>
+      <h>285</h>
     </coordinates>
     <panel_attributes>Lamp
 -
@@ -25,10 +25,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>144</x>
-      <y>80</y>
-      <w>352</w>
-      <h>304</h>
+      <x>135</x>
+      <y>15</y>
+      <w>330</w>
+      <h>285</h>
     </coordinates>
     <panel_attributes>Lichtknop
 -
@@ -45,10 +45,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
-      <y>144</y>
-      <w>400</w>
-      <h>80</h>
+      <x>450</x>
+      <y>75</y>
+      <w>375</w>
+      <h>75</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -59,10 +59,10 @@ bedienen &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>144</x>
-      <y>544</y>
-      <w>352</w>
-      <h>256</h>
+      <x>135</x>
+      <y>450</y>
+      <w>330</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>Dimschakelaar
 -
@@ -74,12 +74,39 @@ bedienen &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>272</x>
-      <y>368</y>
-      <w>48</w>
-      <h>208</h>
+      <x>255</x>
+      <y>285</y>
+      <w>45</w>
+      <h>195</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>960</x>
+      <y>465</y>
+      <w>315</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>Stroboscoop
+-
+- frequentie
+-
++ AanGaan()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1080</x>
+      <y>285</y>
+      <w>45</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
   </element>
 </diagram>
