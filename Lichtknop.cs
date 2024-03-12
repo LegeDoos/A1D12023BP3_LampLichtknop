@@ -11,7 +11,7 @@ namespace LampLichtknop
     /// </summary>
     public class Lichtknop
     {
-        private int id;
+        public int Id { get; private set; }
         
         /// <summary>
         /// Geeft aan of de schakelaar aan of uit staat
@@ -28,8 +28,9 @@ namespace LampLichtknop
         /// <summary>
         /// Standaard constructor
         /// </summary>
-        public Lichtknop(string beschrijving)
+        public Lichtknop(int id, string beschrijving)
         {
+            Id = id;
             AanUit = false;
             Lampen = new List<Lamp>();
             Beschrijving = beschrijving;
