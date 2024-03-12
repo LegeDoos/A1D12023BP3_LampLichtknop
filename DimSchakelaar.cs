@@ -12,6 +12,14 @@ namespace LampLichtknop
     public class DimSchakelaar : Lichtknop
     {
         /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="beschrijving"></param>
+        public DimSchakelaar(string beschrijving) : base(beschrijving)
+        {
+        }
+
+        /// <summary>
         /// Het ingestelde dimpercentage
         /// </summary>
         public int DimPercentage { get; private set; }

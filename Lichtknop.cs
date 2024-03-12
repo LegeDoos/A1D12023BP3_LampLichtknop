@@ -18,6 +18,8 @@ namespace LampLichtknop
         /// </summary>
         public bool AanUit { get; private set; }
 
+        public string Beschrijving { get; set; }
+        
         /// <summary>
         /// De lijst met lampen, property met getter en setter
         /// </summary>
@@ -26,10 +28,11 @@ namespace LampLichtknop
         /// <summary>
         /// Standaard constructor
         /// </summary>
-        public Lichtknop()
+        public Lichtknop(string beschrijving)
         {
             AanUit = false;
             Lampen = new List<Lamp>();
+            Beschrijving = beschrijving;
         }
         /// <summary>
         /// Voeg een lamp toe aan de lichtknop
