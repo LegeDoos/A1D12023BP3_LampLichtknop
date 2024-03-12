@@ -71,11 +71,7 @@ namespace LampLichtknop.DataAccessLayer
                         }
                     }
                 }
-
-
             }
         }
-
-
     }
 }
