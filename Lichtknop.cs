@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LampLichtknop.DataAccessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -64,6 +65,20 @@ namespace LampLichtknop
                     lamp.UitGaan();
                 }
             }
+        }
+
+        // data access methods
+        public void AddTodatabase()
+        {
+            DAL dal = new DAL();
+            dal.CreateLightswitch(this);            
+        }
+
+        public static List<Lichtknop> ReadLightSwitches()
+        {
+            DAL dal = new DAL();
+            dal.ReadLightswitches();
+            return dal.Lichtknoppen;
         }
     }
 }
