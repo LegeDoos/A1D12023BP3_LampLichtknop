@@ -32,6 +32,7 @@
     </coordinates>
     <panel_attributes>Lichtknop
 -
++ Id : int
 + AanUit : bool
 + Lampen : List&lt;Lamp&gt;
 -

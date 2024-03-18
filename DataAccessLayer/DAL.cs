@@ -28,16 +28,47 @@ namespace LampLichtknop.DataAccessLayer
         }
 
 
-        /// <summary>
-        /// Deze method haalt alle gegevens op uit de database die relevant zijn
-        /// </summary>
-        public void DataOphalen()
+        public void CreateLightswitch(Lichtknop lichtknop)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
+                string query = "insert into LichtKnop (Aanuit, Beschrijving, Dimpercentage, Type) values (@AanUit, @Beschrijving, @Dimpercentage, @type)";
 
-                string query = "select id, AanUit, beschrijving from LichtKnop";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Aanuit", lichtknop.AanUit);
+                    command.Parameters.AddWithValue("@Beschrijving", lichtknop.Beschrijving);
+                    
+                    if (lichtknop is DimSchakelaar)
+                    {
+                        DimSchakelaar dimschakelaar = lichtknop as DimSchakelaar;
+                        command.Parameters.AddWithValue("@Dimpercentage", dimschakelaar.DimPercentage);
+                        command.Parameters.AddWithValue("@Type", "Dimschakelaar");
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@Type", "Schakelaar");
+                        command.Parameters.AddWithValue("@Dimpercentage", DBNull.Value);
+                    }
+                    command.ExecuteNonQuery();                    
+                }
+            }
+            ReadLightswitches();
+        }
+
+
+        /// <summary>
+        /// Deze method haalt alle gegevens van de lichtknoppen op uit de database die relevant zijn
+        /// </summary>
+        public void ReadLightswitches()
+        {
+            Lichtknoppen.Clear();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "select id, AanUit, beschrijving, dimpercentage, type from LichtKnop";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -48,7 +79,18 @@ namespace LampLichtknop.DataAccessLayer
                             int id = reader.GetInt32(0);
                             bool aanuit = reader.GetBoolean(1);
                             string beschrijving = reader.GetString(2);
-                            Lichtknop lichtknop = new Lichtknop(id, beschrijving);
+                            string type = reader.GetString(4);
+
+                            Lichtknop lichtknop;
+                            if (type.Equals("Schakelaar"))
+                            {
+                                lichtknop = new Lichtknop(id, beschrijving);
+                            }
+                            else
+                            {
+                                int dimpercentage = reader.GetInt32(3);
+                                lichtknop = new DimSchakelaar(id, beschrijving, dimpercentage);
+                            }
                             lichtknop.Omzetten();
                             Lichtknoppen.Add(lichtknop);
                         }
