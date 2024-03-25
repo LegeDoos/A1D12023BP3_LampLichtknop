@@ -68,7 +68,8 @@ namespace LampLichtknop
         }
 
         // data access methods
-        public void AddTodatabase()
+
+        public void AddToDatabase()
         {
             DAL dal = new DAL();
             dal.CreateLightswitch(this);            

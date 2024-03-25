@@ -17,7 +17,7 @@ namespace LampLichtknop.DataAccessLayer
     /// </summary>
     public class DAL
     {
-        string connectionString = "Data Source=.;Initial Catalog=BP3LampLichtknop;Integrated Security=true";
+        readonly string connectionString = "Data Source=.;Initial Catalog=BP3LampLichtknop;Integrated Security=true";
 
         public List<Lichtknop> Lichtknoppen { get; set; } = new List<Lichtknop>();
 
